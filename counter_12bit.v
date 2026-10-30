@@ -9,10 +9,12 @@ module counter_12bit (
     //2^12=4096 hence 12 bits
     input clk,
     input reset,
-    output [11:0] Q
+    output [11:0] Q,
+    output en
 );
 
     wire T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11;
+    assign en = 1'b1;
 
     // T inputs
     assign T0 = 1'b1;
@@ -112,5 +114,6 @@ module counter_12bit (
         .T(T11),
         .Q(Q[11])
     );
+    
 
 endmodule

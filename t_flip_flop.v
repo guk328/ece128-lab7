@@ -4,11 +4,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module t_flip_flop ( // Code from lab 4
-    input  clk,
-    input  reset,
-    input  T,
-    output reg Q
+module t_flip_flop (
+    input clk,
+    input reset,
+    input T,
+    output reg Q = 1'b0
 );
 
     always @(posedge clk) begin
@@ -16,8 +16,6 @@ module t_flip_flop ( // Code from lab 4
             Q <= 1'b0;
         else if (T)
             Q <= ~Q;
-        else
-            Q <= Q;
     end
 
 endmodule
